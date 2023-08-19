@@ -16,6 +16,7 @@ namespace Apps
             arr.Add (23);
             arr.Add(25);
             arr.Add(27);
+            arr.Add(35);
             Console.WriteLine($"{arr.Count}/{arr.Capacity}");
             Console.ReadKey();
         }
