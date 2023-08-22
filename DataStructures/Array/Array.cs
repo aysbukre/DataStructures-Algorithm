@@ -98,8 +98,17 @@ namespace DataStructures.Array
         }
 
         public object Clone()
-        {
-            throw new NotImplementedException();
+        {   // MemberwiseClone( sığ copy) ilgili objectin bütün özelliklerini kopyalar. Değiştirmek istediğimiz kısımları manuel olarak değiştiririz.
+            //return this.MemberwiseClone();
+             
+            // deep copy de her şeyi sıfırdan oluşturuyoruz.
+            var arr = new Array<T>();
+            foreach(var item in this)
+            {
+                arr.Add(item);
+              
+            }
+            return arr;   
         }
 
         public IEnumerator<T> GetEnumerator()

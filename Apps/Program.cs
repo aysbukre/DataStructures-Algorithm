@@ -9,16 +9,37 @@ namespace Apps
     {
         static void Main(string[] args)
         {
-
             //var p1 = new DataStructures.Array.Array<int>(1,2,3,4); generic array/ it accepts IEnumarable contrats / bu tüzden parametre olarak bu ifadeyi çalıştırabiliriz.
             //var p2 = new int[] { 8,9,10,11}; classic array / works 
             //var p3 = new List<int>() { 55, 9, 66, 77 }; generic list / collection/ works 
             //var p4 = new ArrayList() { 78,79,81,20}; arraylist / not works/ array list does not convert to int
             // arraylist objecte bağlı çalışır. boxing ve unboxing vs gibi durumlarda tip güvenliğini kaybederiz. bu yüzden arraylist kullanamayız
             // IEnumerable foreach yapısını destekleyecek tip güvenliğini sağlayacak
+
+            // -----------------------------------------------------
+
+            
+
             var arr = new DataStructures
                 .Array
-                .Array<int>(15,16,17,18,19);
+                .Array<int>();
+            //generic array büyütme ve küçültme
+            for (int i = 0; i <8; i++) 
+            {
+                arr.Add (i+1);
+                Console.WriteLine($"{i+1} added");
+                Console.WriteLine($"{arr.Count}/{arr.Capacity}");
+            }
+
+            Console.WriteLine("------");
+
+            // reverse
+            for (int i = arr.Count; i >= 0; i--)
+            {
+                Console.WriteLine($"{arr.Remove()} removed");
+            }
+
+
             foreach (var item in arr)
             {
                 Console.WriteLine(item);
