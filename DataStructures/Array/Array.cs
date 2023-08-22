@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -29,7 +29,15 @@ namespace DataStructures.Array
             }
         }
 
-
+        //public Array( IEnumarable<T> collection)
+        //{
+        //    InnerList = new T[collection.ToArray().Length];
+        //    Count = 0;
+        //    foreach(var item in collection)
+        //    {
+        //        Add((T)item);
+        //    }
+        //}
         // eleman ekleme işlemi 
         public void Add(T item) 
         {

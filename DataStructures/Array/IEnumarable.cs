@@ -2,5 +2,6 @@
 {
     public interface IEnumarable<T>
     {
+        object ToArray();
     }
 }
