@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
+
 using System.Text;
 using System.Threading.Tasks;
 
@@ -18,6 +18,18 @@ namespace DataStructures.Array
             InnerList = new T[2];
             Count = 0;
         }
+
+        public Array(params T[] initial)
+        {
+            InnerList = new T[initial.Length];
+            Count = 0;
+            foreach (var item in initial)
+            {
+                Add(item);
+            }
+        }
+
+
         // eleman ekleme işlemi 
         public void Add(T item) 
         {
@@ -46,6 +58,36 @@ namespace DataStructures.Array
             System.Array.Copy(InnerList, temp, InnerList.Length);
             InnerList = temp;
         }
+        public T Remove()
+        {
+            if(Count == 0)
+            {
+                throw new Exception("there is no more item to removed from the array");
+            }
+
+            if(InnerList.Length/4 == Count) 
+            {
+                HalfArray();        
+            }
+            var temp = InnerList[Count-1];
+            if (Count > 0)
+            {
+                Count--;
+            }
+            
+            return temp;
+        }
+
+        private void HalfArray()
+        {
+            //yarıya indirebilmemiz için dizinin boyutunun her zaman ikinin üstünde olması gerekir
+            if(InnerList.Length>2)
+            {
+                var temp = new T[InnerList.Length / 2];
+                System.Array.Copy(InnerList, temp, temp.Length);
+                InnerList = temp;
+            }
+        }
 
         public object Clone()
         {
@@ -54,12 +96,14 @@ namespace DataStructures.Array
 
         public IEnumerator<T> GetEnumerator()
         {
-            throw new NotImplementedException();
+            return InnerList.Take(Count).GetEnumerator();
         }
 
         IEnumerator IEnumerable.GetEnumerator()
         {
-            throw new NotImplementedException();
+            return GetEnumerator();
         }
+
+       
     }
 }
