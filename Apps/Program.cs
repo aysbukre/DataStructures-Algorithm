@@ -14,6 +14,10 @@ namespace Apps
             linkedlist.AddFirst(1);
             linkedlist.AddFirst(2);
             linkedlist.AddFirst(3);
+            //3 2 1  ekleme yapılırken o(1) complexitysine sahip
+            linkedlist.AddLast(4);
+            linkedlist.AddLast(5);
+            //3 2 1 4 5 sona ekleme yapılırken o(n) complexitysine sahip çünkü içinde bir döngü daha var
             Console.ReadKey();
             //var p1 = new DataStructures.Array.Array<int>(1,2,3,4); generic array/ it accepts IEnumarable contrats / bu tüzden parametre olarak bu ifadeyi çalıştırabiliriz.
             //var p2 = new int[] { 8,9,10,11}; classic array / works 
