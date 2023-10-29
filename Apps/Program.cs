@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataStructures.LinkedList.SinglyLinkedList;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,11 @@ namespace Apps
     {
         static void Main(string[] args)
         {
+            var linkedlist = new SinglyLinkedList<int>();
+            linkedlist.AddFirst(1);
+            linkedlist.AddFirst(2);
+            linkedlist.AddFirst(3);
+            Console.ReadKey();
             //var p1 = new DataStructures.Array.Array<int>(1,2,3,4); generic array/ it accepts IEnumarable contrats / bu tüzden parametre olarak bu ifadeyi çalıştırabiliriz.
             //var p2 = new int[] { 8,9,10,11}; classic array / works 
             //var p3 = new List<int>() { 55, 9, 66, 77 }; generic list / collection/ works 
@@ -20,30 +26,30 @@ namespace Apps
 
             
 
-            var arr = new DataStructures
-                .Array
-                .Array<int>();
+            //var arr = new DataStructures
+            //    .Array
+            //    .Array<int>();
             //generic array büyütme ve küçültme
-            for (int i = 0; i <8; i++) 
-            {
-                arr.Add (i+1);
-                Console.WriteLine($"{i+1} added");
-                Console.WriteLine($"{arr.Count}/{arr.Capacity}");
-            }
+            //for (int i = 0; i <8; i++) 
+            //{
+            //    arr.Add (i+1);
+            //    Console.WriteLine($"{i+1} added");
+            //    Console.WriteLine($"{arr.Count}/{arr.Capacity}");
+            //}
 
-            Console.WriteLine("------");
+            //Console.WriteLine("------");
 
-            // reverse
-            for (int i = arr.Count; i >= 0; i--)
-            {
-                Console.WriteLine($"{arr.Remove()} removed");
-            }
+            //// reverse
+            //for (int i = arr.Count; i >= 0; i--)
+            //{
+            //    Console.WriteLine($"{arr.Remove()} removed");
+            //}
 
 
-            foreach (var item in arr)
-            {
-                Console.WriteLine(item);
-            }
+            //foreach (var item in arr)
+            //{
+            //    Console.WriteLine(item);
+            //}
             // artık array üzerinden işlemler yapabiliriz.
             //mesela count ve capacity bilgilerini buradan alabiliriz artık.
             //arr.Add(23);
@@ -62,7 +68,7 @@ namespace Apps
             //    .ToList().ForEach(x => Console.WriteLine(x));
 
             //Console.WriteLine($"{arr.Count}/{arr.Capacity}");
-            Console.ReadKey();
+            //Console.ReadKey();
         }
     }
 }
